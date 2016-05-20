@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="IPN Simulator" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" id="d01fcd4b-ec42-4f5b-9cad-e57e6f342726" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="PayU Instant Payment Notification" type="rest" id="3aa64abc-4081-4eb3-8000-93cc1b850cc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://testcentre.co.za</con:endpoint></con:endpoints><con:resource name="IPN" path="/ipn.php" id="7b8ae5db-f214-4aaf-9e79-f54c0aa8fd3e"><con:settings/><con:parameters/><con:method name="Ipn" method="POST" id="53e4c597-2ab8-4a5e-91de-33df39c25083"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/><con:element>PaymentNotification</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/xml; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:xht="http://www.w3.org/1999/xhtml">xht:html</con:element></con:representation><con:request name="Request" mediaType="application/json" postQueryString="false" id="e519a3ff-2263-453c-80bb-bf48696036f3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding/><con:endpoint>http://testcentre.co.za</con:endpoint><con:request><![CDATA[<PaymentNotification Stage="false">
+  <MerchantReference>178597</MerchantReference>
+  <TransactionType>PAYMENT</TransactionType>
+  <TransactionState>SUCCESSFUL</TransactionState>
+  <ResultCode>00</ResultCode>
+  <ResultMessage>Successful</ResultMessage>
+  <PayUReference>88125410875</PayUReference>
+  <Basket>
+    <Description>This is a Test</Description>
+    <AmountInCents>100</AmountInCents>
+    <CurrencyCode>ZAR</CurrencyCode>
+    <Products/>
+  </Basket>
+  <PaymentMethodsUsed>
+    <Eft BankName="NEDBANK" AmountInCents="14000" Reference="STAXDLSNNZ" AccountNumber="1003669700" BranchNumber="145209" AccountType="Cheque/Current" TimeLimit="168" Currency="ZAR"/>
+  </PaymentMethodsUsed>
+  <IpnExtraInfo>
+    <ResponseHash></ResponseHash>
+  </IpnExtraInfo>
+</PaymentNotification>]]></con:request><con:originalUri>http://testcentre.co.za/ipn.php</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
